@@ -45,6 +45,13 @@ class Paper {
 
     paper.addEventListener('touchstart', (e) => {
       const touch = e.touches[0];
+      const target = e.target;
+
+      // Check if the touch is on a link
+      if (target.tagName === 'A' || target.closest('a')) {
+        return; // Do not initiate dragging if the touch is on a link
+      }
+
       this.handleStart(touch.clientX, touch.clientY);
       e.preventDefault(); // Prevent default touch behavior
     }, { passive: false });
