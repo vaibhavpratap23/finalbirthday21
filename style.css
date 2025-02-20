@@ -11,19 +11,25 @@ body {
 }
 
 .paper {
+  user-select: none; /* Prevent text selection */
   background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
   background-size: 500px;
-  touch-action: none; /* Disable default touch behaviors like scrolling */
-  user-select: text; /* Prevent text selection */
   background-position: center center;
   padding: 20px;
   transform: rotateZ(-5deg);
   box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
   position: absolute;
-  width: auto; /* Let the width adjust based on content */
-  height: auto; /* Let the height adjust based on content */
-  max-width: 90%; /* Ensure it doesn't overflow the screen */
+  width: auto;
+  height: auto;
+  max-width: 90%;
 }
+
+/* Allow touch interactions on the link */
+.paper a {
+  touch-action: auto; /* Enable default touch behaviors for the link */
+  user-select: auto; /* Allow text selection for the link */
+}
+
 
 .paper.heart {
   position: relative;
